@@ -12,11 +12,25 @@ function App() {
   const handleFailure = (result) => {
     alert(result);
   };
-  const handleLogin = (googleData) => {
+  const handleLogin = async (googleData) => {
     console.log(googleData);
+    const res = await fetch('/api/google-login', {
+      method: 'POST', 
+      body: JSON.stringify({
+        token: googleData.tokenId,
+      }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    const data = await res.json();
+    setLoginData(data);
+    localStorage.setItem('loginData', JSON.stringify(data));
   };
   const handleLogout = (result) => {
-    console.log('exit');
+    localStorage.removeItem('loginData');
+    setLoginData(null);
   }
   return(
     <div className="App">
