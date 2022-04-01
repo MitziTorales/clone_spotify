@@ -24,10 +24,11 @@ const [loginData, setLoginData] = useState(
     });
 
     const data = await res.json();
+    console.log('res', data);
     setLoginData(data);
     localStorage.setItem('loginData', JSON.stringify(data));
   };
-  const handleLogout = (result) => {
+  const handleLogout = () => {
     localStorage.removeItem('loginData');
     setLoginData(null);
   }
