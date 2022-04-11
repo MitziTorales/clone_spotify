@@ -12,7 +12,6 @@ const [loginData, setLoginData] = useState(
     alert(result);
   };
   const handleLogin = async (googleData) => {
-    console.log(googleData);
     const res = await fetch('/api/google-login', {
       method: 'POST', 
       body: JSON.stringify({
@@ -24,7 +23,6 @@ const [loginData, setLoginData] = useState(
     });
 
     const data = await res.json();
-    console.log('res', data);
     setLoginData(data);
     localStorage.setItem('loginData', JSON.stringify(data));
   };
@@ -39,7 +37,7 @@ const [loginData, setLoginData] = useState(
         <div>
          {loginData ? (
             <div>
-              <h3>You logged in as {loginData.email}</h3>
+              <h3>You logged in as {loginData.name}</h3>
               <button onClick={handleLogout}>Logout</button>
             </div>
           ) : (

@@ -22,9 +22,10 @@ app.post('/api/google-login', async (req, res) => {
         idToken: token,
         audience: process.env.CLIENT_ID,
     });
-    const { name, email, picture } = ticket.getPayLoad();
+    const { name, email, picture } = ticket.getPayload();
     upsert(users, { name, email, picture });
     res.status(201);  
+    res.json({ name, email, picture });
 });
 
 app.listen(process.env.PORT || 5000, () =>{
