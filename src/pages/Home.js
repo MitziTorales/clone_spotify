@@ -47,6 +47,7 @@ const [loginData, setLoginData] = useState(
               onSuccess={handleLogin}
               onFailure={handleFailure}
               cookiePolicy={'single_host_origin'}
+              data-testid="login"
             ></GoogleLogin>
           )}
         </div>
