@@ -5,14 +5,14 @@ import {
   Routes,
   Route
 } from "react-router-dom";
-import Home from './pages/Home'
+import Login from './pages/Login'
 import PageNotFound from './pages/PageNotFound'
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route exact path="/" element={<Home />} />
+        <Route exact path="/" element={<Login />} />
         <Route path= "*" element={<PageNotFound />} />
       </Routes>
     </Router>

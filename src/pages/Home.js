@@ -1,58 +1,27 @@
-import React, { useState } from "react";
-import GoogleLogin from 'react-google-login';
+import React from "react";
+import { SpotifyContainer } from '../Helpers/styled';
+import Body from '../Components/Body/Body';
+import SideBar from '../Components/SideBar/SideBar';
+import Footer from '../Components/Footer/Footer';
+import { UserContext } from "../Provider/userProvider";
 
 const Home = () => {
-const [loginData, setLoginData] = useState(
-    localStorage.getItem('loginData')
-      ? JSON.parse(localStorage.getItem('loginData'))
-      : null
-  );
+  // const user = useContext(NameUserContext)
 
-  const handleFailure = (result) => {
-    alert(result);
-  };
-  const handleLogin = async (googleData) => {
-    const res = await fetch('/api/google-login', {
-      method: 'POST', 
-      body: JSON.stringify({
-        token: googleData.tokenId,
-      }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
-
-    const data = await res.json();
-    setLoginData(data);
-    localStorage.setItem('loginData', JSON.stringify(data));
-  };
   const handleLogout = () => {
     localStorage.removeItem('loginData');
-    setLoginData(null);
+    // setLoginData(null); 
   }
-  return(
-    <div className="App">
-      <header className="App-header">
-        <h1>Login</h1>
-        <div>
-         {loginData ? (
-            <div>
-              <h3>You logged in as {loginData.name}</h3>
-              <button onClick={handleLogout}>Logout</button>
-            </div>
-          ) : (
-            <GoogleLogin
-              clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
-              buttonText="Log in with Google"
-              onSuccess={handleLogin}
-              onFailure={handleFailure}
-              cookiePolicy={'single_host_origin'}
-              data-testid="login"
-            ></GoogleLogin>
-          )}
-        </div>
-      </header>
-    </div>
+
+  return (
+      <UserContext.Consumer>
+        <SpotifyContainer>
+            <SideBar />
+            {value => <h1>{value.name}</h1>}
+            <Body />
+        </SpotifyContainer>
+        <Footer />
+    </UserContext.Consumer>
   );
 }
 
