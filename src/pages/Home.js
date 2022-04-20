@@ -14,14 +14,14 @@ const Home = () => {
   }
 
   return (
-      <UserContext.Consumer>
+      <>
         <SpotifyContainer>
             <SideBar />
             {value => <h1>{value.name}</h1>}
             <Body />
         </SpotifyContainer>
         <Footer />
-    </UserContext.Consumer>
+      </>
   );
 }
 

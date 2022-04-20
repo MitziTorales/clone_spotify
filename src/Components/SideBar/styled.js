@@ -19,11 +19,18 @@ export const SideElementContainer = styled(Flex)`
   height: 35px;
   color: #fff;
   padding: 5px 10px 5px 5px;
+  filter: opacity(0.5) drop-shadow(0 0 0 gray); 
+  cursor: pointer;
+  transition: 30ms color ease-in;
+  &:hover {
+    filter: opacity(1) drop-shadow(0 0 0 white); 
+  }
   & img {
     width: 24px;
     height: 24px;
-    margin: 0px;
+    margin: 0px; 
   }
+
 `;
 
 export const ElementText = styled(Box)`

@@ -39,9 +39,7 @@ const [loginData, setLoginData] = useState(
     <Root>
         <div>
          {loginData ? (
-           <UserContext.Provider value={loginData}>
-              <Home user={loginData}/>
-            </UserContext.Provider>
+            <Home user={loginData}/>
           ) : (
             <LoginContainer>
               <img src={imgSpotify} alt="logo" />
