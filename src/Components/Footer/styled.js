@@ -3,13 +3,25 @@ import {
     Box, Flex
   } from 'rebass';
 
-export const FooterConteiner = styled(Box)`
+export const FooterContainer = styled(Flex)`
   position: fixed;
   bottom: 0;
   height: 80px;
   width: 100vw;
-  border-top: 1px solid #303030;
-  background-color: #000;
-  
+  border-top: 1px solid #282828;
+  background-color: #181818;
+  justify-content: space-around;
+`;
+
+export const PlayerContainer = styled(Box)`
+
+`;
+
+export const DataSong = styled(Box)`
+
+`;
+
+export const ControlsContainer = styled(Box)`
+
 `;
  

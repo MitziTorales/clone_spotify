@@ -4,7 +4,7 @@ import {
   } from 'rebass';
 
 export const SideBarContainer = styled(Box)`
-  background-color: #000;
+  background-color: #121212;
   height: 100vh;
   min-width: 280px;
   & img {

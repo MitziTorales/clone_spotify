@@ -12,19 +12,22 @@ export const Root = styled(Box)`
 `;
 
 export const LoginContainer = styled(Box)`
-  display: grid;
-  padding-top: 20%;
-  & img {
-    width: 50%;
-    margin-left: 30%;
-  }
+  padding-top: 100px;
   &&&{
     .buttonLogin {
-        margin-left: 50%;
         height: 40px;
         margin-top: 100px;
         width: 200px;
     }
+  }
+`;
+
+export const ImageContainer = styled(Box)`
+  width: 100%;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgb(217, 218, 220);
+  & img {
+    width: 500px;
   }
 `;
 

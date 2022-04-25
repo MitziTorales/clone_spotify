@@ -1,11 +1,24 @@
 import React  from "react";
-import { FooterConteiner } from './styled';
+import {
+    FooterContainer,
+    DataSong,
+    PlayerContainer,
+    ControlsContainer
+} from './styled';
 
 const Footer = () => {
     return(
-        <FooterConteiner>
-            Player
-        </FooterConteiner>
+        <FooterContainer>
+            <DataSong>
+                Song
+            </DataSong>
+            <PlayerContainer>
+                Player
+            </PlayerContainer>
+            <ControlsContainer>
+                Volume-bar
+            </ControlsContainer>
+        </FooterContainer>
     )
 }
 

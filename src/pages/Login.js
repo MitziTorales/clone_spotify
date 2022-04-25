@@ -2,7 +2,7 @@ import React, { useState, createContext } from "react";
 import GoogleLogin from 'react-google-login';
 import Home from './Home';
 import imgSpotify from '../Helpers/icons/Spotify_Logo_Black.png'
-import { Root, LoginContainer } from '../Helpers/styled';
+import { Root, LoginContainer, ImageContainer } from '../Helpers/styled';
 import { useUser } from '../Provider/userProvider';
 
 // export const UserContext = createContext();
@@ -44,7 +44,9 @@ const Login = () => {
             <Home user={loginData}/>
           ) : (
             <LoginContainer>
-              <img src={imgSpotify} alt="logo" />
+              <ImageContainer>
+                <img src={imgSpotify} alt="logo" />
+              </ImageContainer>
               <GoogleLogin
                 clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
                 buttonText="Log in with Google"
@@ -52,7 +54,7 @@ const Login = () => {
                 onFailure={handleFailure}
                 cookiePolicy={'single_host_origin'}
                 data-testid="login"
-                className=" "
+                className="buttonLogin"
               ></GoogleLogin>
            </LoginContainer>
           )}
