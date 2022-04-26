@@ -9,9 +9,7 @@ import { useUser } from '../../Provider/userProvider';
 
 const Header = () => {
     const { loginData } = useUser();
-    console.log('loginData', loginData);
     const iconUser = loginData.picture ? loginData.picture : user;
-    console.log('user', iconUser);
     return(
         <HeaderContainer>
             <Box>

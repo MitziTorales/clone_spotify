@@ -13,6 +13,14 @@ export const SideBarContainer = styled(Box)`
     padding-top: 20px;
     margin-right: auto;
   }
+  &&&{
+    .sidebar_title {
+      display: flex;
+      color: #fff;
+      padding-left: 15%;
+      padding-top: 40px;
+    }
+  }
 `;
 
 export const SideElementContainer = styled(Flex)`

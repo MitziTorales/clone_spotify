@@ -3,10 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { SpotifyLayer } from './Provider/spotifyProvider';
+import reducer, { initialState } from './Reducers/reducer';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <SpotifyLayer initialState={initialState} reducer={reducer}>
+      <App />
+    </SpotifyLayer>
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -4,7 +4,7 @@ import { SideElementContainer, ElementText } from './styled';
 const SideElement = ({title, Icon}) => {
     return (
         <SideElementContainer>
-            <img src={Icon} alt={title} />
+            {Icon ? <img src={Icon} alt={title} /> : null }
             <ElementText>{title}</ElementText>     
         </SideElementContainer>
     )
