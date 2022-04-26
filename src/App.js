@@ -5,17 +5,21 @@ import {
   Routes,
   Route
 } from "react-router-dom";
-import Home from './pages/Home'
+import Login from './pages/Login'
 import PageNotFound from './pages/PageNotFound'
+import UserProvider from './Provider/userProvider';
+
 
 function App() {
   return (
-    <Router>
+    <UserProvider>
+      <Router>
       <Routes>
-        <Route exact path="/" element={<Home />} />
+        <Route exact path="/" element={<Login />} />
         <Route path= "*" element={<PageNotFound />} />
       </Routes>
     </Router>
+    </UserProvider>
   );
 }
 
