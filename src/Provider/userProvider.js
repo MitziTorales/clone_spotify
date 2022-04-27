@@ -37,7 +37,7 @@ function UserProvider({children}) {
         setLoginData(data);
         localStorage.setItem('loginData', JSON.stringify(data));
         // eslint-disable-next-line no-restricted-globals
-        // location.href = accessUrl;
+        location.href = accessUrl;
   };
 
   const logout = () => {

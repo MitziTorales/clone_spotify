@@ -12,6 +12,7 @@ const Login = () => {
 
   const handleFailure = (result) => {
     alert(result);
+    console.log('');
   };
   
   return(

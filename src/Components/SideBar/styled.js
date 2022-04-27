@@ -11,6 +11,7 @@ export const SideBarContainer = styled(Box)`
     height: 80px;
     padding: 10px;
     padding-top: 20px;
+    padding-left: 0px
     margin-right: auto;
   }
   &&&{
@@ -26,7 +27,7 @@ export const SideBarContainer = styled(Box)`
 export const SideElementContainer = styled(Flex)`
   height: 35px;
   color: #fff;
-  padding: 5px 10px 5px 5px;
+  padding: 5px 10px 5px 15px;
   filter: opacity(0.5) drop-shadow(0 0 0 gray); 
   cursor: pointer;
   transition: 30ms color ease-in;
