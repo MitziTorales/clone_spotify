@@ -1,4 +1,4 @@
-import React, { useState, createContext } from "react";
+import React from "react";
 import GoogleLogin from 'react-google-login';
 import Home from './Home';
 import imgSpotify from '../Helpers/icons/Spotify_Logo_Black.png'
@@ -12,7 +12,6 @@ const Login = () => {
 
   const handleFailure = (result) => {
     alert(result);
-    console.log('');
   };
   
   return(

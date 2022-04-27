@@ -11,8 +11,7 @@ export const SideBarContainer = styled(Box)`
     height: 80px;
     padding: 10px;
     padding-top: 20px;
-    padding-left: 0px
-    margin-right: auto;
+    padding-left: 0px;
   }
   &&&{
     .sidebar_title {
