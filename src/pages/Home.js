@@ -36,7 +36,14 @@ const Home = () => {
           type: "SET_PLAYLISTS",
           playlists: playlists,
         })
-      })
+      });
+
+      spotify.getPlaylist('37i9dQZF1E34ShAjejBaEz').then((dailymix) =>
+        dispatch({
+          type: "SET_DAILY_MIX",
+          dailymix: dailymix,
+        }));
+        
     }
   },  [token, dispatch] );
 
@@ -44,7 +51,7 @@ const Home = () => {
     <> 
       <SpotifyContainer>
         <SideBar />
-        <Body />
+        <Body spotify={spotify} />
       </SpotifyContainer><Footer />
     </>
   );
