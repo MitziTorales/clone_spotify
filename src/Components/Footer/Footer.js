@@ -24,8 +24,8 @@ const Footer = () => {
             <DataSong>
                 <img src='https://i.scdn.co/image/ab67616d00004851cb4ec52c48a6b071ed2ab6bc' alt="logoAlbum" className='albumLogo' /> 
                 <InfoSong>
-                    <h4>Name song</h4>
-                    <p>Name sing</p>
+                    <h4>Heathens</h4>
+                    <p>Twenty One Pilots</p>
                 </InfoSong>
             </DataSong>
             <PlayerContainer>

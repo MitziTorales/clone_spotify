@@ -8,8 +8,7 @@ import IconLibrary from '../../Helpers/icons/library.png';
 import { useSpotifyLayer } from "../../Provider/spotifyProvider";
 
 const SideBar = () => {
-    const [{ playlists }, dispatch] = useSpotifyLayer(); 
-    console.log('play', playlists);
+    const [{ playlists }] = useSpotifyLayer(); 
     return(
         <SideBarContainer>
             <img src={imgSpotify} alt="logo" />
@@ -19,7 +18,7 @@ const SideBar = () => {
             <strong className="sidebar_title">PLAYLISTS</strong>
             <hr />
             {playlists?.items?.map((playlist) => (
-                <SideElement title={playlist.name} />
+                <SideElement title={playlist.name} key={`playlist-${playlist}`} />
             ))}
         </SideBarContainer>
     )
