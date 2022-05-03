@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
+import { accessUrl } from '../Helpers/spotify';
 
 const UserContext = createContext(null);
 
@@ -35,6 +36,8 @@ function UserProvider({children}) {
         const data = await res.json();
         setLoginData(data);
         localStorage.setItem('loginData', JSON.stringify(data));
+        // eslint-disable-next-line no-restricted-globals
+        location.href = accessUrl;
   };
 
   const logout = () => {
