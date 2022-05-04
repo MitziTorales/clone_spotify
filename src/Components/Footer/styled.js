@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import {
-    Box, Flex
+    Flex
   } from 'rebass';
 
 export const FooterContainer = styled(Flex)`
